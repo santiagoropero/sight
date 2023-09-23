@@ -1,0 +1,15 @@
+server:
+  servlet:
+    contextPath: /admin
+
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/SIGHT
+    username: root
+    password:
+    driver:
+      class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
