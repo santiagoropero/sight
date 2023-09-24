@@ -14,7 +14,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
     })
 @EntityScan("co.uninpahu.sight.admin.model.entity")
 @ComponentScan("co.uninpahu.sight.admin.*")
-@EnableJpaRepositories("co.uninpahu.sight.admin.*")
+@EnableJpaRepositories("co.uninpahu.sight.admin.model.*")
 public class SightAdminApplication {
     public static void main(String[] args) {
         SpringApplication.run(SightAdminApplication.class, args);
