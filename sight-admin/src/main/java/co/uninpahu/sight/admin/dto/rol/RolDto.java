@@ -1,4 +1,4 @@
-package co.uninpahu.sight.admin.dto;
+package co.uninpahu.sight.admin.dto.rol;
 
 
 import lombok.Builder;

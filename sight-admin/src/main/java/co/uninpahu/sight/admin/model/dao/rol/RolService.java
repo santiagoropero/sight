@@ -1,6 +1,6 @@
 package co.uninpahu.sight.admin.model.dao.rol;
 
-import co.uninpahu.sight.admin.dto.RolDto;
+import co.uninpahu.sight.admin.dto.rol.RolDto;
 import co.uninpahu.sight.admin.model.dao.rol.mapper.RolMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

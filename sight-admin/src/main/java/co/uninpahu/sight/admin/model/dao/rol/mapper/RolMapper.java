@@ -1,6 +1,6 @@
 package co.uninpahu.sight.admin.model.dao.rol.mapper;
 
-import co.uninpahu.sight.admin.dto.RolDto;
+import co.uninpahu.sight.admin.dto.rol.RolDto;
 import co.uninpahu.sight.admin.model.entity.rol.Rol;
 import lombok.experimental.UtilityClass;
 

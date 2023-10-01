@@ -1,6 +1,6 @@
 package co.uninpahu.sight.admin.app;
 
-import co.uninpahu.sight.admin.controller.TestController;
+import co.uninpahu.sight.admin.controller.rol.RolController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @ComponentScan(
         basePackageClasses = {
-        TestController.class
+        RolController.class
     })
 @EntityScan("co.uninpahu.sight.admin.model.entity")
 @ComponentScan("co.uninpahu.sight.admin.*")
