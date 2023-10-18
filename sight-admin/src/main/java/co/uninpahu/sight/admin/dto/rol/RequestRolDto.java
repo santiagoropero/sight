@@ -18,11 +18,11 @@ public class RequestRolDto implements Serializable {
 
     @NotBlank(message = "El nombre del rol no puede estar vacío")
     @NotNull(message = "El nombre del rol no puede estar nulo")
-//    @Size(max = 3, message = "El nombre del rol debe tener una longitud maxíma de 40 caracteres")
+    @Size(max = 40, message = "El nombre del rol debe tener una longitud maxíma de 40 caracteres")
     private String name;
 
     @NotBlank(message = "El estado no puede estar vacío")
     @NotNull(message = "El estado no puede estar nulo")
-    @Size(max = 3, message = "El estado debe tener una longitud maxíma de 20 caracteres")
+    @Size(max = 20, message = "El estado debe tener una longitud maxíma de 20 caracteres")
     private String state;
 }
