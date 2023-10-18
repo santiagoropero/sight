@@ -5,10 +5,8 @@ import co.uninpahu.sight.admin.util.AbstractGenericResponse;
 import co.uninpahu.sight.admin.util.AbstractGenericResponseMessageResponse;
 import co.uninpahu.sight.admin.util.GenericResponseCodes;
 
-public class ResponseRolDtoAll extends AbstractGenericResponse<ResponseRolPayloadAll> {
-
-
-    public ResponseRolDtoAll(GenericResponseCodes genericResponseCodes, ResponseRolPayloadAll data, String message) {
+public class ResponseRolDto extends AbstractGenericResponse<ResponseRolDtoPayload> {
+    public ResponseRolDto(GenericResponseCodes genericResponseCodes, ResponseRolDtoPayload data, String message) {
         super(
                 AbstractGenericResponseMessageResponse
                         .builder()

@@ -1,6 +1,6 @@
-package co.uninpahu.sight.admin.model.entity.person;
+package co.uninpahu.sight.admin.entity.person;
 
-import co.uninpahu.sight.admin.model.entity.rol.Rol;
+import co.uninpahu.sight.admin.entity.rol.Rol;
 import lombok.*;
 
 import javax.persistence.*;

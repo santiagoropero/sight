@@ -1,4 +1,4 @@
-package co.uninpahu.sight.admin.model.entity.rol;
+package co.uninpahu.sight.admin.entity.rol;
 
 import lombok.*;
 

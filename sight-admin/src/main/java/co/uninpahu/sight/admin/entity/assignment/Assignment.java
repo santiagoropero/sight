@@ -1,7 +1,7 @@
-package co.uninpahu.sight.admin.model.entity.assignment;
+package co.uninpahu.sight.admin.entity.assignment;
 
-import co.uninpahu.sight.admin.model.entity.person.Person;
-import co.uninpahu.sight.admin.model.entity.project.Project;
+import co.uninpahu.sight.admin.entity.person.Person;
+import co.uninpahu.sight.admin.entity.project.Project;
 import lombok.*;
 
 import javax.persistence.*;

@@ -1,7 +1,7 @@
-package co.uninpahu.sight.admin.model.entity.project;
+package co.uninpahu.sight.admin.entity.project;
 
-import co.uninpahu.sight.admin.model.entity.client.Client;
-import co.uninpahu.sight.admin.model.entity.person.Person;
+import co.uninpahu.sight.admin.entity.client.Client;
+import co.uninpahu.sight.admin.entity.person.Person;
 import lombok.*;
 
 import javax.persistence.*;

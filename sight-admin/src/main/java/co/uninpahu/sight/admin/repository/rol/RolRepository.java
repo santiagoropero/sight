@@ -1,6 +1,6 @@
-package co.uninpahu.sight.admin.model.dao.rol;
+package co.uninpahu.sight.admin.repository.rol;
 
-import co.uninpahu.sight.admin.model.entity.rol.Rol;
+import co.uninpahu.sight.admin.entity.rol.Rol;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

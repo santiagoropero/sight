@@ -1,4 +1,4 @@
-package co.uninpahu.sight.admin.model.entity.client;
+package co.uninpahu.sight.admin.entity.client;
 
 import lombok.*;
 
