@@ -15,3 +15,9 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     open-in-view: false
+
+messages:
+  responseEmpty: "No se encuentran registros en la base datos."
+  responseErrorFind: "No es posible consultar la información requerida."
+  responseErrorCreate: "No es posible realizar el registro de la información suministrada."
+  responseSuccessCreate: "Se ha registrado la información de forma exitosa."

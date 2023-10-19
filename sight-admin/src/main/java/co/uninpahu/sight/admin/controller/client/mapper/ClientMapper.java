@@ -1,8 +1,8 @@
-package co.uninpahu.sight.admin.controller.rol.mapper;
+package co.uninpahu.sight.admin.controller.client.mapper;
 
 import co.uninpahu.sight.admin.dto.ResponseError;
 import co.uninpahu.sight.admin.dto.ResponseErrorList;
-import co.uninpahu.sight.admin.dto.rol.*;
+import co.uninpahu.sight.admin.dto.client.*;
 import co.uninpahu.sight.admin.services.TimeManagerService;
 import co.uninpahu.sight.admin.util.GenericResponseCodes;
 import co.uninpahu.sight.admin.util.GenericResponseMessageResponse;
@@ -14,43 +14,25 @@ import java.util.Collections;
 import java.util.List;
 
 @UtilityClass
-public class RolMapper {
+public class ClientMapper {
 
-    public static ResponseRolDtoAll buildResponseSuccess(List<RolDto> roles) {
-        return new ResponseRolDtoAll(
+    public static ResponseClientDtoAll buildSuccessResponse(List<ClientDto> clients) {
+        return new ResponseClientDtoAll(
                 GenericResponseCodes.CONSULTA_EXITOSA,
-                ResponseRolPayloadAll
+                ResponseClientDtoPayloadAll
                         .builder()
-                        .roles(roles)
+                        .clients(clients)
                         .build(),
                 null
         );
     }
 
-    public static ResponseRolDtoAll buildResponseEmpty(String message) {
-        return new ResponseRolDtoAll(
+    public static ResponseClientDtoAll buildResponseEmpty(String message) {
+        return new ResponseClientDtoAll(
                 GenericResponseCodes.CONSULTA_EXITOSA,
-                ResponseRolPayloadAll
+                ResponseClientDtoPayloadAll
                         .builder()
-                        .roles(new ArrayList<>())
-                        .build(),
-                message
-        );
-    }
-
-    public static RolDto buildRequestCreateRol(RequestRolDto requestRolDto) {
-        return RolDto
-                .builder()
-                .name(requestRolDto.getName())
-                .state(requestRolDto.getState())
-                .build();
-    }
-
-    public static ResponseRolDto buildSuccessResponseCreate(String message) {
-        return new ResponseRolDto(
-                GenericResponseCodes.REGISTRO_EXITOSO,
-                ResponseRolDtoPayload
-                        .builder()
+                        .clients(new ArrayList<>())
                         .build(),
                 message
         );
@@ -77,5 +59,23 @@ public class RolMapper {
                         )
                 )
                 .build();
+    }
+
+    public static ClientDto buildRequestCreateClient(RequestClientDto requestClientDto) {
+        return ClientDto
+                .builder()
+                .name(requestClientDto.getName())
+                .state(requestClientDto.getState())
+                .build();
+    }
+
+    public static ResponseClientDto buildResponseSuccessCreate(String message) {
+        return new ResponseClientDto(
+                GenericResponseCodes.REGISTRO_EXITOSO,
+                ResponseClientDtoPayload
+                        .builder()
+                        .build(),
+                message
+        );
     }
 }

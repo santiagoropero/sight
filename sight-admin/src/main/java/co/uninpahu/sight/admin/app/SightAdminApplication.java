@@ -8,10 +8,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan(
-        basePackageClasses = {
-        RolController.class
-    })
 @EntityScan("co.uninpahu.sight.admin.entity")
 @ComponentScan("co.uninpahu.sight.admin.*")
 @EnableJpaRepositories("co.uninpahu.sight.admin.repository.*")

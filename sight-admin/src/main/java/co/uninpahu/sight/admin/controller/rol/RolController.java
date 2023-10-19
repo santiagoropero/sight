@@ -7,6 +7,7 @@ import co.uninpahu.sight.admin.repository.rol.RolService;
 import co.uninpahu.sight.admin.util.GenericResponseCodes;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,9 @@ public class RolController {
     @Autowired
     private RolService rolService;
 
+    @Autowired
+    private Environment environment;
+
     @GetMapping("/all")
     public ResponseEntity<?> getRoles() {
         log.info("Inicio consultar roles");
@@ -33,12 +37,12 @@ public class RolController {
                 return new ResponseEntity<>(RolMapper.buildResponseSuccess(roles), HttpStatus.OK);
             } else {
                 log.info("No existen roles");
-                return new ResponseEntity<>(RolMapper.buildResponseEmpty(), HttpStatus.OK);
+                return new ResponseEntity<>(RolMapper.buildResponseEmpty(environment.getProperty("messages.responseEmpty")), HttpStatus.NO_CONTENT);
             }
         } catch (Exception e) {
             log.error("Error consultando los roles, detalles: {} ", e.getMessage());
             return new ResponseEntity<>(RolMapper.buildErrorResponse(GenericResponseCodes.ERROR_INTERNO_SERVIDOR,
-                    HttpStatus.INTERNAL_SERVER_ERROR, "No es posible consultar los roles"), HttpStatus.INTERNAL_SERVER_ERROR);
+                    HttpStatus.INTERNAL_SERVER_ERROR, environment.getProperty("messages.responseErrorFind")), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -48,11 +52,11 @@ public class RolController {
         try {
             rolService.save(RolMapper.buildRequestCreateRol(requestRolDto));
             log.info("Exito creando el rol: {} ", requestRolDto.getName());
-            return new ResponseEntity<>(RolMapper.buildSuccessResponseCreate(), HttpStatus.OK);
+            return new ResponseEntity<>(RolMapper.buildSuccessResponseCreate(environment.getProperty("messages.responseSuccessCreate")), HttpStatus.OK);
         } catch (Exception e) {
             log.error("Error creando el rol, detalles: {} ", e.getMessage());
             return new ResponseEntity<>(RolMapper.buildErrorResponse(GenericResponseCodes.ERROR_INTERNO_SERVIDOR,
-                    HttpStatus.INTERNAL_SERVER_ERROR, "No es posible realizar el registro del rol"), HttpStatus.INTERNAL_SERVER_ERROR);
+                    HttpStatus.INTERNAL_SERVER_ERROR, environment.getProperty("messages.responseErrorCreate")), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
