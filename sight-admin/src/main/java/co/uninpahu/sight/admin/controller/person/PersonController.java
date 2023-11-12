@@ -2,6 +2,7 @@ package co.uninpahu.sight.admin.controller.person;
 
 import co.uninpahu.sight.admin.controller.person.mapper.PersonMapper;
 import co.uninpahu.sight.admin.dto.person.PersonDto;
+import co.uninpahu.sight.admin.dto.person.RequestPersonDto;
 import co.uninpahu.sight.admin.repository.person.PersonService;
 import co.uninpahu.sight.admin.util.GenericResponseCodes;
 import lombok.extern.slf4j.Slf4j;
@@ -9,11 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -41,9 +40,23 @@ public class PersonController {
                 return new ResponseEntity(PersonMapper.buildResponseEmpty(environment.getProperty("messages.responseEmpty")), HttpStatus.OK);
             }
         } catch (Exception e) {
-            log.error("Error consultando las personas, detalles: {} ", e.getMessage());
+            log.error("Error consultando las personas, detalles: {} ", e.getCause().getMessage());
             return new ResponseEntity<>(PersonMapper.buildErrorResponse(GenericResponseCodes.ERROR_INTERNO_SERVIDOR,
                     HttpStatus.INTERNAL_SERVER_ERROR, environment.getProperty("messages.responseErrorFind")), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<?> createPerson(@Valid @RequestBody RequestPersonDto requestPersonDto) {
+        log.info("Inicio crear persona");
+        try {
+            personService.create(PersonMapper.buildRequestCreatePerson(requestPersonDto));
+            log.info("Exito creando la persona con la identificacion: {} ", requestPersonDto.getNumberIdentification());
+            return new ResponseEntity<>(PersonMapper.buildResponseSuccessCreate(requestPersonDto, environment.getProperty("messages.responseSuccessCreate")), HttpStatus.OK);
+        } catch (Exception e) {
+            log.error("Error creando la persona, detalles: {} ", e.getMessage());
+            return new ResponseEntity<>(PersonMapper.buildErrorResponse(GenericResponseCodes.ERROR_INTERNO_SERVIDOR,
+                    HttpStatus.INTERNAL_SERVER_ERROR, environment.getProperty("messages.messageResponseErrorCreate")), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

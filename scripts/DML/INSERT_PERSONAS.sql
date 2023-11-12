@@ -1,0 +1,7 @@
+INSERT INTO PERSONAS
+(PER_ID, PER_NOMBRES, PER_APELLIDOS, PER_CORREO, PER_ESTADO, PER_ID_ROL)
+VALUES(1000224327, 'Diego', 'Ropero', 'diego.ropero@itac.co', 'Activo', 2);
+
+INSERT INTO PERSONAS
+(PER_ID, PER_NOMBRES, PER_APELLIDOS, PER_CORREO, PER_ESTADO, PER_ID_ROL)
+VALUES(100448676, 'Jhonathan', 'Pérez', 'jhonathan.perez@itac.co', 'Activo', 1);

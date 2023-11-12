@@ -2,9 +2,8 @@ package co.uninpahu.sight.admin.controller.person.mapper;
 
 import co.uninpahu.sight.admin.dto.ResponseError;
 import co.uninpahu.sight.admin.dto.ResponseErrorList;
-import co.uninpahu.sight.admin.dto.person.PersonDto;
-import co.uninpahu.sight.admin.dto.person.ResponsePersonAllDto;
-import co.uninpahu.sight.admin.dto.person.ResponsePersonPayloadAllDto;
+import co.uninpahu.sight.admin.dto.person.*;
+import co.uninpahu.sight.admin.dto.rol.RolDto;
 import co.uninpahu.sight.admin.services.TimeManagerService;
 import co.uninpahu.sight.admin.util.GenericResponseCodes;
 import co.uninpahu.sight.admin.util.GenericResponseMessageResponse;
@@ -61,5 +60,44 @@ public class PersonMapper {
                         )
                 )
                 .build();
+    }
+    
+    
+    public static PersonDto buildRequestCreatePerson(RequestPersonDto requestPersonDto) {
+        return PersonDto
+                .builder()
+                .idPerson(Long.valueOf(requestPersonDto.getNumberIdentification()))
+                .names(requestPersonDto.getNames())
+                .lastNames(requestPersonDto.getLastNames())
+                .email(requestPersonDto.getEmail())
+                .state(requestPersonDto.getState())
+                .rol(
+                        RolDto
+                                .builder()
+                                .idRol(Long.valueOf(requestPersonDto.getRol()))
+                                .build()
+                )
+                .build();
+    }
+
+
+    public static ResponsePersonCreateDto buildResponseSuccessCreate(RequestPersonDto requestPersonDto, String message) {
+        return new ResponsePersonCreateDto(
+                GenericResponseCodes.REGISTRO_EXITOSO,
+                ResponsePersonPayloadCreateDto
+                        .builder()
+                        .person(
+                                PersonDto
+                                        .builder()
+                                        .idPerson(Long.valueOf(requestPersonDto.getNumberIdentification()))
+                                        .names(requestPersonDto.getNames())
+                                        .lastNames(requestPersonDto.getLastNames())
+                                        .email(requestPersonDto.getEmail())
+                                        .state(requestPersonDto.getState())
+                                        .build()
+                        )
+                        .build(),
+                message
+        );
     }
 }

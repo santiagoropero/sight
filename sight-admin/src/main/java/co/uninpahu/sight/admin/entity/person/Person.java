@@ -30,7 +30,7 @@ public class Person implements Serializable {
     @Column(name = "PER_ESTADO", nullable = false, length = 20)
     private String state;
 
-    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name = "PER_ID_ROL", referencedColumnName = "R_ID")
     private Rol rol;
 }

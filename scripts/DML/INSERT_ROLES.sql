@@ -1,0 +1,3 @@
+INSERT INTO ROLES VALUES (1, 'QA', 'Activo');
+INSERT INTO ROLES VALUES (2, 'DEV', 'Activo');
+INSERT INTO ROLES VALUES (3, 'Líder Técnico', 'Activo');
