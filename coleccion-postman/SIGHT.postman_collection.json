@@ -182,6 +182,64 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Proyectos",
+					"item": [
+						{
+							"name": "Obtener proyectos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/admin/api/projects/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"api",
+										"projects",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Crear proyecto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Proyecto prueba\",\n    \"client\": {\n        \"idClient\": 1,\n        \"name\": \"Bancolombia\"\n    },\n    \"person\": {\n        \"idPerson\": 1000224327,\n        \"name\": \"Diego Ropero\"\n    },\n    \"dateStart\": \"2022-09-11\",\n    \"dateEnd\": \"2023-10-10\",\n    \"state\": \"Activo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/admin/api/projects/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"api",
+										"projects",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
