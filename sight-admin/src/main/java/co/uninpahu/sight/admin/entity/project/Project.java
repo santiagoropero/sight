@@ -32,11 +32,11 @@ public class Project implements Serializable {
     @Column(name = "PRY_ESTADO", nullable = false, length = 20)
     private String state;
 
-    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "PRY_ID_CLIENTE", referencedColumnName = "CL_ID")
     private Client client;
 
-    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "PRY_ID_PERSONA", referencedColumnName = "PER_ID")
     private Person person;
 
