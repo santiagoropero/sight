@@ -1,0 +1,415 @@
+{
+	"info": {
+		"_postman_id": "4a09436a-92f2-4532-a290-4a1bcea5e11e",
+		"name": "SIGHT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12585081"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Personas",
+					"item": [
+						{
+							"name": "Obtener personas",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/admin/api/persons/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"api",
+										"persons",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Crear Persona",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"numberIdentification\": 1049674767,\n    \"names\": \"Prueba\",\n    \"lastNames\": \"Prueba\",\n    \"email\": \"prueba@correo.com\",\n    \"state\": \"Activo\",\n    \"rol\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/admin/api/persons/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"api",
+										"persons",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Roles",
+					"item": [
+						{
+							"name": "Obtener todos los roles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/admin/api/roles/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"api",
+										"roles",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Crear rol",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"\",\n    \"state\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/admin/api/roles/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"api",
+										"roles",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Clientes",
+					"item": [
+						{
+							"name": "Obtener todos los clientes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/admin/api/clients/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"api",
+										"clients",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Crear cliente",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Sudameris\",\n    \"state\": \"Activo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/admin/api/clients/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"api",
+										"clients",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ASSIGNMENTS",
+			"item": [
+				{
+					"name": "Assignments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/assignment/api/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"assignment",
+								"api",
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Security",
+			"item": [
+				{
+					"name": "Generar token",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/auth/realms/dev/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/auth/realms/dev/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "body",
+									"type": "string"
+								},
+								{
+									"key": "state",
+									"value": "12345",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "bcc421b4-525b-42d1-ab54-7fae6801193f",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "employee-service",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8085",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "Keycloak-bearer-token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Security",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/security/api/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"security",
+								"api",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cerrar sesión",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "employee-service",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "bcc421b4-525b-42d1-ab54-7fae6801193f",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhNDI4MDJkMC0wYWM1LTQ5ZTctOTA1MS1mMmMwNzNmMTVmNTAifQ.eyJleHAiOjE2OTYxOTI3MjAsImlhdCI6MTY5NjE5MDkyMCwianRpIjoiZmRlZmRiMmMtZDVlNS00NDUwLWFmNDQtY2IwZjgzNDlmMmY0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL2RldiIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9hdXRoL3JlYWxtcy9kZXYiLCJzdWIiOiI2MTkxNmNmMS0yYjdjLTQxYTItODkyYy01NTAxMjQyYzI1NTAiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoiZW1wbG95ZWUtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiJmYTIyYzI3Mi0yMGRkLTRhMDktYWZiZi0yNWU0Yjc1OGM0NDMiLCJzY29wZSI6InByb2ZpbGUgZW1haWwifQ.1luTgn19Plzcgj03BM9D-prWA50gZCgaItc0xTDTkn0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/realms/dev/protocol/openid-connect/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"realms",
+								"dev",
+								"protocol",
+								"openid-connect",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generar token portador",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "employee-service",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "bcc421b4-525b-42d1-ab54-7fae6801193f",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "diego",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/realms/dev/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"realms",
+								"dev",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
