@@ -1,10 +1,8 @@
 package co.uninpahu.sight.admin.controller.client;
 
 import co.uninpahu.sight.admin.controller.client.mapper.ClientMapper;
-import co.uninpahu.sight.admin.controller.rol.mapper.RolMapper;
 import co.uninpahu.sight.admin.dto.client.ClientDto;
 import co.uninpahu.sight.admin.dto.client.RequestClientDto;
-import co.uninpahu.sight.admin.dto.rol.RequestRolDto;
 import co.uninpahu.sight.admin.repository.client.ClientService;
 import co.uninpahu.sight.admin.util.GenericResponseCodes;
 import lombok.extern.slf4j.Slf4j;
