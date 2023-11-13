@@ -1,6 +1,7 @@
 package co.uninpahu.sight.admin.dto.person;
 
 import co.uninpahu.sight.admin.util.StateEnum;
+import co.uninpahu.sight.admin.util.constraints.ValueOfEmail;
 import co.uninpahu.sight.admin.util.constraints.ValueOfEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,9 +34,7 @@ public class RequestPersonDto implements Serializable {
     @Size(max = 60, message = "Los apellidos de la persona deben tener una longitud maxíma de 60 caracteres")
     private String lastNames;
 
-    @NotBlank(message = "El correo de la persona no puede estar vacío")
-    @NotNull(message = "EL correo de la persona no puede estar nulo")
-    @Size(max = 40, message = "El correo de la persona deben tener una longitud maxíma de 40 caracteres")
+    @ValueOfEmail
     private String email;
 
     @ValueOfEnum(enumClass = StateEnum.class, message = "Los valores permitidos para el estado son: ACTIVO, INACTIVO")
