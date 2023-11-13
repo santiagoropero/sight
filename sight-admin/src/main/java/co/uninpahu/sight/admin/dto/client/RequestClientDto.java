@@ -1,5 +1,7 @@
 package co.uninpahu.sight.admin.dto.client;
 
+import co.uninpahu.sight.admin.util.StateEnum;
+import co.uninpahu.sight.admin.util.constraints.ValueOfEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,8 +22,6 @@ public class RequestClientDto implements Serializable {
     @Size(max = 40, message = "El nombre del cliente debe tener una longitud maxíma de 40 caracteres")
     private String name;
 
-    @NotBlank(message = "El estado no puede estar vacío")
-    @NotNull(message = "El estado no puede estar nulo")
-    @Size(max = 20, message = "El estado debe tener una longitud maxíma de 20 caracteres")
+    @ValueOfEnum(enumClass = StateEnum.class, message = "Los valores permitidos para el estado son: ACTIVO, INACTIVO")
     private String state;
 }

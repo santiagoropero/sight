@@ -1,5 +1,8 @@
 package co.uninpahu.sight.admin.dto.project;
 
+import co.uninpahu.sight.admin.util.StateEnum;
+import co.uninpahu.sight.admin.util.constraints.ValueOfDate;
+import co.uninpahu.sight.admin.util.constraints.ValueOfEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,16 +33,12 @@ public class RequestProjectDto implements Serializable {
     @Valid
     private RequestProjectPersonDto person;
 
-    @NotBlank(message = "La fecha inicio del proyecto no puede estar vacía")
-    @NotNull(message = "La fecha inicio proyecto no puede estar nula")
+    @ValueOfDate(message = "La fecha inicio no tiene el formato correcto")
     private String dateStart;
 
-    @NotBlank(message = "La fecha fin del proyecto no puede estar vacía")
-    @NotNull(message = "La fecha fin del proyecto no puede estar nula")
+    @ValueOfDate(message = "La fecha fin no tiene el formato correcto")
     private String dateEnd;
 
-    @NotBlank(message = "El estado no puede estar vacío")
-    @NotNull(message = "El estado no puede estar nulo")
-    @Size(max = 20, message = "El estado debe tener una longitud maxíma de 20 caracteres")
+    @ValueOfEnum(enumClass = StateEnum.class, message = "Los valores permitidos para el estado son: ACTIVO, INACTIVO")
     private String state;
 }
