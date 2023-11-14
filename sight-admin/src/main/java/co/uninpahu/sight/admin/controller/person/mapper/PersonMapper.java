@@ -10,7 +10,6 @@ import co.uninpahu.sight.admin.util.GenericResponseMessageResponse;
 import lombok.experimental.UtilityClass;
 import org.springframework.http.HttpStatus;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -33,7 +32,6 @@ public class PersonMapper {
                 GenericResponseCodes.CONSULTA_EXITOSA,
                 ResponsePersonPayloadAllDto
                         .builder()
-                        .persons(new ArrayList<>())
                         .build(),
                 message
         );
@@ -86,16 +84,11 @@ public class PersonMapper {
                 GenericResponseCodes.REGISTRO_EXITOSO,
                 ResponsePersonPayloadCreateDto
                         .builder()
-                        .person(
-                                PersonDto
-                                        .builder()
-                                        .idPerson(Long.valueOf(requestPersonDto.getNumberIdentification()))
-                                        .names(requestPersonDto.getNames())
-                                        .lastNames(requestPersonDto.getLastNames())
-                                        .email(requestPersonDto.getEmail())
-                                        .state(requestPersonDto.getState())
-                                        .build()
-                        )
+                        .numberIdentification(requestPersonDto.getNumberIdentification())
+                        .names(requestPersonDto.getNames())
+                        .lastNames(requestPersonDto.getLastNames())
+                        .email(requestPersonDto.getEmail())
+                        .state(requestPersonDto.getState())
                         .build(),
                 message
         );

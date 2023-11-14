@@ -19,10 +19,10 @@ import java.io.Serializable;
 @Validated
 public class RequestPersonDto implements Serializable {
 
-    @NotBlank(message = "El número de documento de la persona no puede estar vacío")
-    @NotNull(message = "El número de documento de la persona no puede estar nulo")
-    @Size(max = 20, message = "El número de documento de la persona debe tener una longitud maxíma de 20 caracteres")
-    private String numberIdentification;
+//    @NotBlank(message = "El número de documento de la persona no puede estar vacío")
+//    @NotNull(message = "El número de documento de la persona no puede estar nulo")
+//    @Size(max = 20, message = "El número de documento de la persona debe tener una longitud maxíma de 20 caracteres")
+    private Integer numberIdentification;
 
     @NotBlank(message = "Los nombres de la persona no pueden estar vacíos")
     @NotNull(message = "Los nombres de la persona no pueden estar nulos")

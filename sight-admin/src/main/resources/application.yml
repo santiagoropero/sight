@@ -1,6 +1,7 @@
 server:
   servlet:
     contextPath: /admin
+  port: 8082
 
 spring:
   datasource:

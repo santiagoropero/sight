@@ -11,5 +11,9 @@ import java.io.Serializable;
 @Getter
 @Builder
 public class ResponsePersonPayloadCreateDto implements Serializable {
-    private PersonDto person;
+    private Integer numberIdentification;
+    private String names;
+    private String lastNames;
+    private String email;
+    private String state;
 }

@@ -69,11 +69,13 @@ public class ClientMapper {
                 .build();
     }
 
-    public static ResponseClientDto buildResponseSuccessCreate(String message) {
+    public static ResponseClientDto buildResponseSuccessCreate(RequestClientDto requestClientDto, String message) {
         return new ResponseClientDto(
                 GenericResponseCodes.REGISTRO_EXITOSO,
                 ResponseClientDtoPayload
                         .builder()
+                        .name(requestClientDto.getName())
+                        .state(requestClientDto.getState())
                         .build(),
                 message
         );

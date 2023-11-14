@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/clients")
-@CrossOrigin(origins = "")
+@CrossOrigin(origins = "*")
 @Slf4j
 public class ClientController {
 
@@ -52,7 +52,7 @@ public class ClientController {
         try {
             clientService.create(ClientMapper.buildRequestCreateClient(requestClientDto));
             log.info("Exito creando el cliente: {} ", requestClientDto.getName());
-            return new ResponseEntity<>(ClientMapper.buildResponseSuccessCreate(environment.getProperty("messages.responseSuccessCreate")), HttpStatus.OK);
+            return new ResponseEntity<>(ClientMapper.buildResponseSuccessCreate(requestClientDto, environment.getProperty("messages.responseSuccessCreate")), HttpStatus.OK);
         } catch (Exception e) {
             log.error("Error creando el cliente, detalles: {} ", e.getMessage());
             return new ResponseEntity<>(ClientMapper.buildErrorResponse(GenericResponseCodes.ERROR_INTERNO_SERVIDOR,

@@ -12,5 +12,6 @@ import java.io.Serializable;
 @Getter
 @Builder
 public class ResponseClientDtoPayload implements Serializable {
-    private ClientDto client;
+    private String name;
+    private String state;
 }
