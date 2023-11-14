@@ -18,12 +18,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8080/admin/api/persons/all",
+									"raw": "http://localhost:8082/admin/api/persons/all",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8080",
+									"port": "8082",
 									"path": [
 										"admin",
 										"api",
@@ -41,7 +41,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"numberIdentification\": 1049674767,\n    \"names\": \"Prueba\",\n    \"lastNames\": \"Prueba\",\n    \"email\": \"prueba@correo.com\",\n    \"state\": \"Activo\",\n    \"rol\": 1\n}",
+									"raw": "{\n    \"numberIdentification\": 5039586,\n    \"names\": \"Prueba\",\n    \"lastNames\": \"Prueba\",\n    \"email\": \"prueba@gmail.com\",\n    \"state\": \"ACTIVO\",\n    \"rol\": 1\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -49,12 +49,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/admin/api/persons/create",
+									"raw": "http://localhost:8082/admin/api/persons/create",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8080",
+									"port": "8082",
 									"path": [
 										"admin",
 										"api",
@@ -134,12 +134,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8080/admin/api/clients/all",
+									"raw": "http://localhost:8082/admin/api/clients/all",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8080",
+									"port": "8082",
 									"path": [
 										"admin",
 										"api",
@@ -157,7 +157,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Sudameris\",\n    \"state\": \"Activo\"\n}",
+									"raw": "{\n    \"name\": \"Prueba\",\n    \"state\": \"ACTIVO\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -165,12 +165,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/admin/api/clients/create",
+									"raw": "http://localhost:8082/admin/api/clients/create",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8080",
+									"port": "8082",
 									"path": [
 										"admin",
 										"api",
@@ -192,12 +192,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8080/admin/api/projects/all",
+									"raw": "http://localhost:8082/admin/api/projects/all",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8080",
+									"port": "8082",
 									"path": [
 										"admin",
 										"api",
@@ -215,7 +215,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Proyecto prueba\",\n    \"client\": {\n        \"idClient\": 1,\n        \"name\": \"Bancolombia\"\n    },\n    \"person\": {\n        \"idPerson\": 1000224327,\n        \"name\": \"Diego Ropero\"\n    },\n    \"dateStart\": \"2022-09-11\",\n    \"dateEnd\": \"2023-10-10\",\n    \"state\": \"Activo\"\n}",
+									"raw": "{\n    \"name\": \"Portal Coorporativo\",\n    \"client\": 2,\n    \"person\": 5039586,\n    \"dateStart\": \"2022-09-11\",\n    \"dateEnd\": \"2023-10-10\",\n    \"state\": \"ACTIVO\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -223,12 +223,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/admin/api/projects/create",
+									"raw": "http://localhost:8082/admin/api/projects/create",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8080",
+									"port": "8082",
 									"path": [
 										"admin",
 										"api",

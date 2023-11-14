@@ -8,7 +8,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -25,13 +24,9 @@ public class RequestProjectDto implements Serializable {
     @Size(max = 60, message = "El nombre del proyecto debe tener una longitud maxíma de 60 caracteres")
     private String name;
 
-    @NotNull(message = "La información del cliente no puede estar vacía")
-    @Valid
-    private RequestProjectClientDto client;
+    private Integer client;
 
-    @NotNull(message = "La información de la persona no puede estar vacía")
-    @Valid
-    private RequestProjectPersonDto person;
+    private Integer person;
 
     @ValueOfDate(message = "La fecha inicio no tiene el formato correcto")
     private String dateStart;

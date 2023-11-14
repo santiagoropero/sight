@@ -1,8 +1,6 @@
 package co.uninpahu.sight.admin.controller.project;
 
-import co.uninpahu.sight.admin.controller.person.mapper.PersonMapper;
 import co.uninpahu.sight.admin.controller.project.mapper.ProjectMapper;
-import co.uninpahu.sight.admin.dto.person.PersonDto;
 import co.uninpahu.sight.admin.dto.project.ProjectDto;
 import co.uninpahu.sight.admin.dto.project.RequestProjectDto;
 import co.uninpahu.sight.admin.repository.project.ProjectService;

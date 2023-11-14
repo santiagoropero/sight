@@ -75,15 +75,13 @@ public class ProjectMapper {
                 .client(
                         ClientDto
                                 .builder()
-                                .idClient(Long.valueOf(requestProjectDto.getClient().getIdClient()))
-                                .name(requestProjectDto.getClient().getName())
+                                .idClient(Long.valueOf(requestProjectDto.getClient()))
                                 .build()
                 )
                 .person(
                         PersonDto
                                 .builder()
-                                .idPerson(Long.valueOf(requestProjectDto.getPerson().getIdPerson()))
-                                .names(requestProjectDto.getPerson().getName())
+                                .idPerson(Long.valueOf(requestProjectDto.getPerson()))
                                 .build()
                 )
                 .build();
@@ -95,8 +93,6 @@ public class ProjectMapper {
                 ResponseProjectPayloadCreateDto
                         .builder()
                         .name(requestProjectDto.getName())
-                        .client(requestProjectDto.getClient().getName())
-                        .person(requestProjectDto.getPerson().getName())
                         .startDate(requestProjectDto.getDateStart())
                         .endDate(requestProjectDto.getDateEnd())
                         .state(requestProjectDto.getState())
